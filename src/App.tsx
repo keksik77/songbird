@@ -1,30 +1,54 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import style from './test.module.scss';
-import Header from './test';
+import React, { useEffect, useState} from 'react';
+import {Header, ProgressBar, Riddle, Inputs} from './components';
+import {connect} from 'react-redux';
+import birdsData from './data/birdsData';
+import {SET_IS_RIGHT, SET_NEXT_LEVEL_ACTION, SET_RIDDLE_INDEX} from './redux/actions'
 
-function App() {
+const getRandomNumber = (max: number) => {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
+function App(props: any) {
+  const [isEnd, setIsEnd] = useState(false);
+
+  useEffect (() => {
+    props.SET_RIDDLE_INDEX(getRandomNumber(birdsData[props.level].length));
+  }, []);
+
+  const handlerControlBtn = () => {
+    if (props.isRight && (props.level < (birdsData.length - 1))) {
+      props.SET_NEXT_LEVEL_ACTION(true);
+      props.SET_RIDDLE_INDEX(getRandomNumber(birdsData[props.level].length));
+      props.SET_IS_RIGHT(false);
+    } else if (isEnd) {
+    } else {
+      setIsEnd(true);
+    }
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p className={style.hello}>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-        >
-          Learn React
-        </a>
-      </header>
-      <p className={style['hello']}>
-        Hello!
-      </p>
+    <>
       <Header/>
-    </div>
+      <ProgressBar/>
+      <Riddle/>
+      <Inputs/>
+      <div onClick={handlerControlBtn} className='controlBtn'>Next</div>
+    </>
   );
 }
 
-export default App;
+const mapStateToProps = (state: any) => {
+  return {
+    level: state.level.levelIndex,
+    riddleIndex: state.level.riddleIndex,
+    isRight: state.level.isRight,
+  };
+};
+
+const mapDispatchToProps = {
+  SET_RIDDLE_INDEX,
+  SET_NEXT_LEVEL_ACTION,
+  SET_IS_RIGHT,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

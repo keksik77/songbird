@@ -1,0 +1,56 @@
+.riddleContainer{
+  display: flex;
+    margin: 20px;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    .listGroupItem:first-child {
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+    }
+    .listGroupItem:last-child {
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+    .rightAns{
+      background-color: palegreen!important;
+    }
+    .errorAns{
+      background-color: #fd4e2f!important;
+    }
+  .itemList{
+    width: 100%;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: 0;
+    padding-left: 0;
+
+
+    .liBtn{
+      display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 15px;
+    border-radius: 50%;
+    -webkit-transition: .1s;
+    transition: .1s;
+    background-color: gray;
+    }
+  }
+  .listGroupItem{
+    padding: .85rem 1.25rem;
+    border: 1px solid gray;
+    position: relative;
+    display: block;
+    transition: 0.2s;
+    cursor: pointer;
+  }
+  .listGroupItem:hover{
+    background-color: rgb(253, 78, 47);
+    color: white;
+  }
+}

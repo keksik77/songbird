@@ -1,0 +1,57 @@
+.progressBarContainer{
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  border-radius: 6px;
+  background-color: white;
+  color: white;
+  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
+  li{
+    flex: auto;
+    text-align: center;
+    background: linear-gradient(270deg, rgb(253, 78, 47), rgb(253, 78, 47), white, white);
+    background-position: 120% 100%;
+    background-size: 900% 900%;
+    color: black;
+    p{
+      padding: 0px 10px 0px 10px;
+    }
+  }
+  .active{
+
+    //-webkit-animation: AnimationName 3s ease 1s;
+    //-moz-animation: AnimationName 3s ease 1s;
+    //-o-animation: AnimationName 3s ease 1s;
+    //animation: AnimationName 3s ease 1s;
+    color: white;
+    background-position:100% 50%;
+    transition: all 2s ease-out;
+  }
+  .complited{
+    background-color: yellow;
+  }
+
+}
+
+
+/*@-webkit-keyframes AnimationName {
+  100%{background-position:100% 50%}
+}
+@-moz-keyframes AnimationName {
+  100%{background-position:100% 50%}
+}
+@-o-keyframes AnimationName {
+  100%{background-position:100% 50%}
+}*/
+@keyframes AnimationName {
+  from { background-position: 160% 100% }
+  to {  }
+}
