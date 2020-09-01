@@ -1,7 +1,6 @@
 {
   "name": "songbird",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -18,7 +17,6 @@
   },
   "scripts": {
     "bundle": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production"
   },
