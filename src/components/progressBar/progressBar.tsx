@@ -14,7 +14,8 @@ const ProgressBar:React.FC = (props: any) => {
       <ul className={style.progressBarContainer} onClick={handlerMenu}>
         { birdsData.map(function(item, index){
             const activeClass = props.level >= index ? style.active : '';
-            return <li className={activeClass} key={index}><p>Level {index+1}</p></li>
+            const activeElement = (props.level === index) ? style.thisLevel : '';
+            return <li className={`${activeClass} ${activeElement}`} key={index} ><p>Level {index+1}</p></li>
         })}
       </ul>
   );

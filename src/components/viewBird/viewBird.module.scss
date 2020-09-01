@@ -1,0 +1,85 @@
+.birdDetails{
+  display: flex;
+    padding: 10px;
+    width: 100%;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
+}
+
+.viewBirdContainer{
+  display: flex;
+  width: 65%;
+  margin: 0px 20px 0px 20px;
+  .mainBirdInfo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    .viewBirdImg{
+      width: 220px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 5px;
+      transition: 2s;
+      margin-right: 20px;
+
+    }
+    .cardBody{
+      width: 100%;
+      h3{
+        margin: 0;
+        font-size: 18px;
+      }
+      .species{
+        font-style: italic;
+        font-size: 15px;
+        font-weight: normal;
+      }
+      .underLine{
+        border: 1px solid #fd4e2f;
+        margin: 9px 0px 10px 0px;
+        border-top-style: none;
+      }
+      .audioPlayerWrapper{
+        outline: none;
+        border-radius: 5px;
+        div{
+          outline: none;
+        }
+        button{
+          outline: none;
+        }
+      }
+    }
+  }
+
+}
+
+@media screen and (max-width: 900px) {
+  .viewBirdContainer{
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .mainBirdInfo{
+    flex-direction: column;
+    img{
+      margin-bottom: 10px;
+    }
+  }
+}
+
+

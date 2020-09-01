@@ -10,7 +10,7 @@
   display: flex;
   padding-left: 0;
   list-style: none;
-  border-radius: 6px;
+  border-radius: 10px;
   background-color: white;
   color: white;
   box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.2);
@@ -23,6 +23,7 @@
     color: black;
     p{
       padding: 0px 10px 0px 10px;
+      transition: all 1s ease;
     }
   }
   .active{
@@ -31,9 +32,16 @@
     //-moz-animation: AnimationName 3s ease 1s;
     //-o-animation: AnimationName 3s ease 1s;
     //animation: AnimationName 3s ease 1s;
-    color: white;
+    color: rgba(245, 245, 245, 0.76);
     background-position:100% 50%;
     transition: all 2s ease-out;
+  }
+  .thisLevel{
+    color: white;
+    p{
+      transition: all 1s ease;
+      text-shadow: -1px 2px 2px black;
+    }
   }
   .complited{
     background-color: yellow;

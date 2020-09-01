@@ -1,0 +1,44 @@
+.massageContainer{
+  display: flex;
+  flex-direction: column;
+  background: white;
+  align-items: center;
+  justify-content: space-around;
+  margin: 10px 20px 10px 20px;
+  border-radius: 10px;
+  padding: 40px;
+  max-width: 550px;
+  margin: 10px auto;
+
+  .rankName{
+    font-size: 23px;
+    margin: 0;
+    margin-bottom: 20px;
+    strong{
+      font-style: italic;
+    }
+  }
+
+  .descriptionRank{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    p{
+      margin-left: 20px;
+    }
+    img{
+      width: 160px;
+      margin: 0px;
+      border-radius: 5px;
+    }
+  }
+}
+
+
+@media screen and (max-width: 690px) {
+  .massageContainer{
+    max-width: none;
+    margin: 10px 20px;
+  }
+}
+

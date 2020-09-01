@@ -1,12 +1,23 @@
-import React, { createRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import style from './riddle.module.scss';
 import unknownBird from '../../mistaryBird.jpg';
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/src/styles.scss';
 import birdsData from '../../data/birdsData'
 import { connect } from 'react-redux';
+import H5AudioPlayer from 'react-h5-audio-player';
 
 const Riddle:React.FC = (props: any) => {
+
+  const audioRef = useRef<H5AudioPlayer>(null);
+
+  useEffect(()=> {
+    if (props.isRight && audioRef.current?.audio.current != undefined) {
+      audioRef.current.audio.current.pause();
+    }
+  }, [props.isRight]);
+
+
   const riddleImgSrc = props.isRight ?
     birdsData[props.level][props.riddleIndex].image : unknownBird;
 
@@ -23,7 +34,9 @@ const Riddle:React.FC = (props: any) => {
         )}
         </div>
       <hr className={style.underLine}/>
-      <AudioPlayer showJumpControls={false}
+      <AudioPlayer
+        ref={audioRef}
+        showJumpControls={false}
         src={birdsData[props.level][props.riddleIndex].audio}
         autoPlayAfterSrcChange={false}
         className={style.audioPlayerWrapper}></AudioPlayer>

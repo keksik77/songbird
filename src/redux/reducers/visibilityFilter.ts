@@ -5,7 +5,7 @@ const initialState = {
   riddleIndex: 0,
   score: 0,
   isRight: false,
-  viewBirdIndex: -1,
+  viewBirdIndex: 0,
 }
 
 const visibilityFilter = (state = initialState, action: any) => {

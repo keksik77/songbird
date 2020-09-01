@@ -1,9 +1,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
-  // webpack will take the files from ./src/index
   entry: './src/index',
-  // and output it into /dist as bundle.js
+
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -28,10 +28,10 @@ module.exports = {
       use: ['style-loader', 'css-loader', 'sass-loader']
     },
     {
-      test: /\.(png|svg|jpg|jpeg|gif|ico)$/,
+      test: /\.(png|svg|jpg|jpeg|gif|ico|mp3)$/,
       exclude: /node_modules/,
       use: ['file-loader?name=[name].[ext]'] // ?name=[name].[ext] is only necessary to preserve the original file name
-    }
+    },
   ]
 },
 devServer: {
