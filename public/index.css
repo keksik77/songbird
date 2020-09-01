@@ -1,0 +1,43 @@
+body{
+  margin: 0;
+  background-color: rgb(230, 230, 230);
+}
+
+.controlBtn{
+  margin: 15px 30px 15px 30px;
+  text-align: center;
+  padding: 15px;
+  font-size: 20px;
+  border-radius: 10px;
+  background-color: gray;
+  cursor: default;
+  transition: 0.4s;
+}
+
+.appWrapper{
+  max-width: 1300px;
+    margin: auto;
+}
+
+.rowContainer{
+    display: flex;
+    justify-content: space-between;
+}
+
+.activeControlBtn{
+  background: #fd4e2f;
+    color: white;
+  cursor: pointer;
+}
+
+.activeControlBtn:hover{
+  background: white;
+    color: black;
+}
+
+
+@media screen and (max-width: 900px) {
+  .rowContainer{
+    flex-direction: column;
+  }
+}
